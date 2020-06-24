@@ -22,9 +22,15 @@ function sayHello() {
 
 function userOrder() {
   var userChoice = prompt("Please select House Or Hotle");
-  if (userChoice === `house`) {
-    document.write('<img id="block" src="images/house.png">');
-  } else if (userChoice === "hotle") {
-    document.write('<p><img src="images/hotel.png"></p>');
+  while (userChoice !== "house" && userChoice !== "hotle") {
+    userChoice = prompt("please select house of hotle");
+  }
+  var orderNumber = prompt("How many orders tou want?");
+  for (var i = 0; i < orderNumber; i++) {
+    if (userChoice === `house`) {
+      document.write('<p><img id="block" src="images/house.png"><p>');
+    } else if (userChoice === "hotle") {
+      document.write('<p><img src="images/hotel.png"></p>');
+    }
   }
 }
